@@ -1,0 +1,45 @@
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 64px;
+  background-color: #092541;
+  color: #fff;
+  align-items: center;
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+.nav__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  margin-right: 14px;
+  img {
+    height: 25px;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  &__item {
+    list-style: none;
+    margin-right: 14px;
+  }
+}
+
+.optional-buttons {
+  display: flex;
+  flex-direction: row;
+  li {
+    list-style: none;
+    margin-right: 14px;
+  }
+}
