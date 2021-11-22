@@ -8,13 +8,13 @@ html, body {
   height: 100%;
 }
 
-.wrapper {
+.body-wrapper {
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.main {
+.body-main {
   flex: 1 1 auto;
 }
 
