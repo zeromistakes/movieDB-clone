@@ -1,16 +1,9 @@
-<div class="result-container__wrapper">
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
-  <app-result-item></app-result-item>
+<div *ngIf="movies2" class="result-container__wrapper">
+  <app-result-item
+    *ngFor="let movie of movies2"
+    [movie]="movie"
+  >
+  </app-result-item>
   <app-pagination></app-pagination>
 </div>
 

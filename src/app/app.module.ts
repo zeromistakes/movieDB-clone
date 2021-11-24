@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from "@angular/common/http";
+
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './main/header/header.component';
@@ -13,6 +14,7 @@ import { SideCategoriesComponent } from './main/result-page/side-categories/side
 import { ResultContainerComponent } from './main/result-page/result-container/result-container.component';
 import { ResultItemComponent } from './main/result-page/result-item/result-item.component';
 import { PaginationComponent } from './main/result-page/pagination/pagination.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { PaginationComponent } from './main/result-page/pagination/pagination.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
