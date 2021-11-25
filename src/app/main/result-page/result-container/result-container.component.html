@@ -1,6 +1,6 @@
-<div *ngIf="movies2" class="result-container__wrapper">
+<div *ngIf="movies" class="result-container__wrapper">
   <app-result-item
-    *ngFor="let movie of movies2"
+    *ngFor="let movie of movies.results"
     [movie]="movie"
   >
   </app-result-item>

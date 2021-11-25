@@ -14,6 +14,9 @@ import { SideCategoriesComponent } from './main/result-page/side-categories/side
 import { ResultContainerComponent } from './main/result-page/result-container/result-container.component';
 import { ResultItemComponent } from './main/result-page/result-item/result-item.component';
 import { PaginationComponent } from './main/result-page/pagination/pagination.component';
+import {FormsModule} from "@angular/forms";
+import { MovieInfoComponent } from './main/movie-info/movie-info.component';
+
 
 
 @NgModule({
@@ -28,12 +31,14 @@ import { PaginationComponent } from './main/result-page/pagination/pagination.co
     SideCategoriesComponent,
     ResultContainerComponent,
     ResultItemComponent,
-    PaginationComponent
+    PaginationComponent,
+    MovieInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {HomePageComponent} from "./main/home-page/home-page.component";
+import {ResultPageComponent} from "./main/result-page/result-page.component";
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'main', component: HomePageComponent },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: 'search-results', component: ResultPageComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
