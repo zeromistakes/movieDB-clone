@@ -13,4 +13,7 @@ export class ResultItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+
 }

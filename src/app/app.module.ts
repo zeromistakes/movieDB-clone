@@ -16,6 +16,8 @@ import { ResultItemComponent } from './main/result-page/result-item/result-item.
 import { PaginationComponent } from './main/result-page/pagination/pagination.component';
 import {FormsModule} from "@angular/forms";
 import { MovieInfoComponent } from './main/movie-info/movie-info.component';
+import { TransformTimePipe } from './pipes/transform-time.pipe';
+import {CommonModule} from "@angular/common";
 
 
 
@@ -32,13 +34,15 @@ import { MovieInfoComponent } from './main/movie-info/movie-info.component';
     ResultContainerComponent,
     ResultItemComponent,
     PaginationComponent,
-    MovieInfoComponent
+    MovieInfoComponent,
+    TransformTimePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

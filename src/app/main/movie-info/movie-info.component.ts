@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SearchService } from '../../search.service';
 @Component({
   selector: 'app-movie-info',
   templateUrl: './movie-info.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieInfoComponent implements OnInit {
 
-  constructor() { }
+  movieInfo:any;
+  constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
+    this.getMovieData();
   }
 
+  getMovieData() {
+    this.searchService.movieInfo.subscribe(data => this.movieInfo = data);
+    console.log(this.movieInfo);
+  }
 }

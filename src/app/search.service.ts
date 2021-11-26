@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class SearchService {
 
   resultData = new BehaviorSubject({});
+  movieInfo = new BehaviorSubject({});
   constructor(private http: HttpClient) {
   }
 
@@ -18,6 +19,14 @@ export class SearchService {
         console.log(data);
         this.resultData.next(data);
       });
+  }
+
+  getMovieData(id: number) {
+    this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=e318a7a565092a3d0c94c77304aec86f&append_to_response=credits`)
+      .subscribe((data:any) => {
+        console.log(data)
+        this.movieInfo.next(data);
+      })
   }
 }
 

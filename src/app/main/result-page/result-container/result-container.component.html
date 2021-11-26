@@ -2,6 +2,7 @@
   <app-result-item
     *ngFor="let movie of movies.results"
     [movie]="movie"
+    (click)="onMovieClick(movie.id)"
   >
   </app-result-item>
   <app-pagination></app-pagination>
