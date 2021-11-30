@@ -1,7 +1,7 @@
-<div>there is {{searchService.totalResults}} results for your query</div>
+<div>there is {{searchService.totalResults}} results for "{{searchService.searchQuery}}" query</div>
 <div class="pagination">
-  <div class="arrow" (click)="searchService.decrementPage()"><</div>
+  <div class="arrow" (click)="searchService.decrementPage()">Prev<<</div>
   <div class="current-page">{{searchService.currentPage}} of {{searchService.totalPages}}</div>
-  <div class="arrow" (click)="searchService.incrementPage()">></div>
+  <div class="arrow" (click)="searchService.incrementPage()">>>Next</div>
 </div>
 

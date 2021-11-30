@@ -1,7 +1,12 @@
 <div class="result-item">
   <div class="result-item__wrapper">
     <a  class="result-item__img-link">
-      <img src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2{{movie.poster_path}}" alt="card image" class="result-item__img">
+      <img
+        *ngIf="movie.poster_path; else templatePoster"
+        src="https://www.themoviedb.org/t/p/w94_and_h141_bestv2{{movie.poster_path}}" alt="card image" class="result-item__img">
+      <ng-template #templatePoster>
+        <img src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg" alt="card image" class="result-item__img">
+      </ng-template>
     </a>
     <div class="result-item__details">
       <div class="result-item__title-wrapper">

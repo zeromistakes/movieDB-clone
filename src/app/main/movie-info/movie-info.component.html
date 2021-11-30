@@ -58,7 +58,17 @@
             class="movie-info__actor-card"
             *ngFor="let actor of movieInfo.credits.cast.slice(0,9)"
           >
-            <img src="https://www.themoviedb.org/t/p/w138_and_h175_face{{actor.profile_path}}" alt="" class="movie-info__actor-image">
+            <div class="movie-info__actor-img-wrapper">
+              <img
+                *ngIf="actor.profile_path; else templateActor"
+                src="https://www.themoviedb.org/t/p/w138_and_h175_face{{actor.profile_path}}"
+                alt=""
+                class="movie-info__actor-image"
+              >
+              <ng-template #templateActor>
+                <img src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-4-user-grey-d8fe957375e70239d6abdd549fd7568c89281b2179b5f4470e2e12895792dfa5.svg" alt="" class="movie-info__actor-image">
+              </ng-template>
+            </div>
             <div class="movie-info__actor-name">{{actor.original_name}}</div>
             <div class="movie-info__actor-character">{{actor.character}}</div>
           </li>
