@@ -6,6 +6,10 @@
     align-items: center;
     color: #ffffff;
   }
+  &__bg-wrapper {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   &__inner-wrapper {
     display: flex;
     justify-content: center;

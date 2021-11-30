@@ -17,7 +17,7 @@ import { PaginationComponent } from './main/result-page/pagination/pagination.co
 import {FormsModule} from "@angular/forms";
 import { MovieInfoComponent } from './main/movie-info/movie-info.component';
 import { TransformTimePipe } from './pipes/transform-time.pipe';
-import {CommonModule} from "@angular/common";
+import {CommonModule, DatePipe} from "@angular/common";
 
 
 

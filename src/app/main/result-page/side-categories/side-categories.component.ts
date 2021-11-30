@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SearchService} from "../../../search.service";
 
 @Component({
   selector: 'app-side-categories',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideCategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public searchService: SearchService) { }
 
   ngOnInit(): void {
   }

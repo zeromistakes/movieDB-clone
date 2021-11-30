@@ -1,3 +1,4 @@
+<app-pagination></app-pagination>
 <div *ngIf="movies" class="result-container__wrapper">
   <app-result-item
     *ngFor="let movie of movies.results"
@@ -5,6 +6,6 @@
     (click)="onMovieClick(movie.id)"
   >
   </app-result-item>
-  <app-pagination></app-pagination>
+
 </div>
 
