@@ -16,7 +16,12 @@ export class MovieInfoComponent implements OnInit {
   }
 
   getMovieData() {
-    this.searchService.movieInfo.subscribe(data => this.movieInfo = data);
-    console.log(this.movieInfo);
+    this.searchService.movieInfo.subscribe(data => {
+      console.log(`data`,data)
+      return this.movieInfo = data
+    }
+    );
   }
+
+  log(val:any) { console.log(val); }
 }

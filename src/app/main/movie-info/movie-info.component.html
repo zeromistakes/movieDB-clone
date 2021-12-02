@@ -32,6 +32,16 @@
               <p class="movie-info__overview">{{movieInfo.overview}}</p>
             </div>
             <ul class="movie-info__people">
+              {{log('render123')}}
+              <li
+                class="movie-info__person"
+              >
+<!--                {{person?.department === 'Sound' ? log(person): null}}-->
+<!--                <div *ngIf="person?.department === 'Sound'">-->
+<!--                  <div  class="movie-info__person-name">{{person?.original_name}}</div>-->
+<!--                  <div  class="movie-info__person-job">{{person?.job}}{{log('render')}}</div>-->
+<!--                </div>-->
+<!--              </li>-->
               <li class="movie-info__person">
                 <div class="movie-info__person-name">Joe Russo</div>
                 <div class="movie-info__person-job">Director</div>

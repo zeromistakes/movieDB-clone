@@ -1,7 +1,19 @@
 <div>there is {{searchService.totalResults}} results for "{{searchService.searchQuery}}" query</div>
 <div class="pagination">
-  <div class="arrow" (click)="searchService.decrementPage()">Prev<<</div>
-  <div class="current-page">{{searchService.currentPage}} of {{searchService.totalPages}}</div>
+  <div *ngIf="searchService.currentPage > 2" class="arrow" (click)="searchService.goToFirstPage()">First page</div>
+
+  <div class="arrow" (click)="searchService.changePage(searchService.getPrevPage())">Prev<<</div>
+
+  <div (click)="searchService.changePage(searchService.getPrevPage())" *ngIf="searchService.currentPage > 1" class="prev-page">{{searchService.getPrevPage()}}</div>
+  <div class="current-page">{{searchService.currentPage}}</div>
+  <div *ngIf="searchService.currentPage < searchService.totalPages"
+       class="next-page"
+       (click)="searchService.changePage(searchService.getNextPage())"
+  >{{searchService.getNextPage()}}
+  </div>
+
   <div class="arrow" (click)="searchService.incrementPage()">>>Next</div>
+
+  <div *ngIf="searchService.currentPage < searchService.totalPages - 1" class="arrow" (click)="searchService.goToLastPage()">Last page</div>
 </div>
 

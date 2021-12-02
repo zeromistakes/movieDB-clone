@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-.arrow {
+.arrow, .prev-page, .next-page, .current-page {
   margin: 0 10px;
 
   height: 20px;
@@ -11,3 +11,4 @@
   line-height: 1;
   cursor: pointer;
 }
+
