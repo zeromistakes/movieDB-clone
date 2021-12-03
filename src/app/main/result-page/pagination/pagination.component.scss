@@ -1,14 +1,33 @@
 .pagination {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin: 10px 0;
 }
 
-.arrow, .prev-page, .next-page, .current-page {
+.current-page {
   margin: 0 10px;
-
-  height: 20px;
+  min-width: 10px;
+  min-height: 24px;
   border: 1px solid grey;
-  line-height: 1;
+  border-radius: 8px;
+  padding: 5px 5px;
+}
+.page {
+  display: flex;
+  margin: 0 10px;
+  min-width: 24px;
+  min-height: 24px;
+
   cursor: pointer;
 }
 
+.arrow {
+  margin: 0 10px;
+  min-width: 24px;
+  min-height: 24px;
+  cursor: pointer;
+  border: 1px solid grey;
+  border-radius: 8px;
+  padding: 5px 5px;
+}
