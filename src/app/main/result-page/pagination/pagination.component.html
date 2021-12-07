@@ -1,55 +1,69 @@
-<div>there is {{searchService.totalResults}} results for "{{searchService.searchQuery}}" query</div>
 <div class="pagination">
   <div
-    *ngIf="searchService.currentPage > 3"
     class="arrow"
-    (click)="searchService.changePage(1)"
-  >First</div>
-  <div
-    class="arrow"
-    (click)="searchService.changePage(searchService.getPrevPage(1))"
-    *ngIf="searchService.currentPage > 1"
+    (click)="emitPrevPage(1)"
+    *ngIf="currentPage > 1"
   >Prev<<</div>
 
-
+  <div
+    *ngIf="currentPage > 3"
+    class="page"
+    (click)="this.changePageEvent.emit(1);"
+  >1</div>
+  <div
+    *ngIf="currentPage > 4"
+    class="page"
+    (click)="this.changePageEvent.emit(2);"
+  >2</div>
 
   <div
-    (click)="searchService.changePage(searchService.getPrevPage(2))"
-    *ngIf="searchService.currentPage > 2"
+    *ngIf="currentPage > 5"
     class="page"
-  >{{searchService.getPrevPage(2)}}</div>
-  <div
-    (click)="searchService.changePage(searchService.getPrevPage(1))"
-    *ngIf="searchService.currentPage > 1"
-    class="page"
-  >{{searchService.getPrevPage(1)}}</div>
-
-  <div class="current-page">{{searchService.currentPage}}</div>
+  >...</div>
 
   <div
-    *ngIf="searchService.currentPage < searchService.totalPages"
+    (click)="emitPrevPage(2)"
+    *ngIf="currentPage > 2"
     class="page"
-    (click)="searchService.changePage(searchService.getNextPage(1))"
-  >{{searchService.getNextPage(1)}}
+  >{{getPrevPage(2)}}</div>
+  <div
+    (click)="emitPrevPage(1)"
+    *ngIf="currentPage > 1"
+    class="page"
+  >{{getPrevPage(1)}}</div>
+  <div class="current-page">{{currentPage}}</div>
+  <div
+    *ngIf="currentPage < totalPages"
+    class="page"
+    (click)="emitNextPage(1)"
+  >{{getNextPage(1)}}
+  </div>
+
+  <div
+    *ngIf="currentPage < totalPages - 1"
+    class="page"
+    (click)="emitNextPage(2)"
+  >{{getNextPage(2)}}
   </div>
   <div
-    *ngIf="searchService.currentPage < searchService.totalPages - 1"
+    *ngIf="currentPage < totalPages - 4"
     class="page"
-    (click)="searchService.changePage(searchService.getNextPage(2))"
-  >{{searchService.getNextPage(2)}}
-  </div>
-
-
+  >...</div>
+  <div
+    *ngIf="currentPage < totalPages - 3"
+    class="page"
+    (click)="this.changePageEvent.emit(totalPages - 1 );"
+  >{{totalPages - 1}}</div>
+  <div
+    *ngIf="currentPage < totalPages - 2"
+    class="page"
+    (click)="this.changePageEvent.emit(totalPages);"
+  >{{totalPages}}</div>
 
   <div
     class="arrow"
-    (click)="searchService.changePage(searchService.getNextPage(1))"
-    *ngIf="searchService.currentPage < searchService.totalPages"
+    (click)="emitNextPage(1)"
+    *ngIf="currentPage < totalPages"
   >>>Next</div>
-  <div
-    *ngIf="searchService.currentPage < searchService.totalPages - 2"
-    class="arrow"
-    (click)="searchService.changePage(searchService.totalPages)"
-  >{{searchService.totalPages}}</div>
 </div>
 

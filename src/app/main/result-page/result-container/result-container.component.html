@@ -1,4 +1,8 @@
-<app-pagination></app-pagination>
+<div>there is {{totalResults}} results for "{{searchService.searchQuery}}" query</div>
+<app-pagination (changePageEvent) = "onPageClick($event)"
+[currentPage]="currentPage"
+></app-pagination>
+
 <div *ngIf="movies" class="result-container__wrapper">
   <app-result-item
     *ngFor="let movie of movies.results"
@@ -6,6 +10,5 @@
     (click)="onMovieClick(movie.id)"
   >
   </app-result-item>
-
 </div>
 

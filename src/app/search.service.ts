@@ -11,21 +11,21 @@ export class SearchService {
   resultData = new BehaviorSubject({});
   movieInfo = new BehaviorSubject({});
 
-  searchQuery = '';
-  currentPage = 1;
-  totalPages = 0;
-  totalResults = 0;
+  public searchQuery = '';
+  // currentPage = 1;
+  // totalPages = 0;
+  // totalResults = 0;
   constructor(private http: HttpClient) {
+
   }
 
-  getSearchData(query: string) {
+  getSearchData(query: string,page:number = 1) {
     this.searchQuery = query;
-    this.currentPage = 1;
-    this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=e318a7a565092a3d0c94c77304aec86f&page=${this.currentPage}&query=${this.searchQuery}`)
+    this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=e318a7a565092a3d0c94c77304aec86f&page=${page}&query=${this.searchQuery}`)
       .subscribe((data:any) => {
         console.log(data);
-        this.totalPages = data.total_pages;
-        this.totalResults = data.total_results;
+        // this.totalPages = data.total_pages;
+        // this.totalResults = data.total_results;
         this.resultData.next(data);
       });
   }
@@ -38,42 +38,8 @@ export class SearchService {
       })
   }
 
-  // incrementPage() {
-  //   if (this.currentPage < this.totalPages) {
-  //     this.currentPage++;
-  //     this.nextPage = this.currentPage + 1;
-  //     this.prevPage = this.currentPage - 1;
-  //     this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=e318a7a565092a3d0c94c77304aec86f&page=${this.currentPage}&query=${this.searchQuery}`)
-  //       .subscribe((data:any) => {
-  //         console.log(data);
-  //         this.resultData.next(data);
-  //       });
-  //   }
-  // }
-  // decrementPage() {
-  //   if (this.currentPage > 1) {
-  //     this.currentPage--;
-  //     this.prevPage = this.currentPage - 1;
-  //     this.nextPage = this.currentPage + 1;
-  //     this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=e318a7a565092a3d0c94c77304aec86f&page=${this.currentPage}&query=${this.searchQuery}`)
-  //       .subscribe((data:any) => {
-  //         console.log(data);
-  //         this.resultData.next(data);
-  //       });
-  //   }
-  // }
-
-  // goToFirstPage() {
-  //   this.currentPage = 1;
-  //   this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=e318a7a565092a3d0c94c77304aec86f&page=${this.currentPage}&query=${this.searchQuery}`)
-  //     .subscribe((data:any) => {
-  //       console.log(data);
-  //       this.resultData.next(data);
-  //     });
-  // }
-  //
-  // goToLastPage() {
-  //   this.currentPage = this.totalPages;
+  // changePage(page:any){
+  //   this.currentPage = page;
   //   this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=e318a7a565092a3d0c94c77304aec86f&page=${this.currentPage}&query=${this.searchQuery}`)
   //     .subscribe((data:any) => {
   //       console.log(data);
@@ -81,22 +47,13 @@ export class SearchService {
   //     });
   // }
 
-  changePage(page:any){
-    this.currentPage = page;
-    this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=e318a7a565092a3d0c94c77304aec86f&page=${this.currentPage}&query=${this.searchQuery}`)
-      .subscribe((data:any) => {
-        console.log(data);
-        this.resultData.next(data);
-      });
-  }
-
-  getNextPage(pageValue:number): number {
-      return this.currentPage + pageValue;
-  }
-
-  getPrevPage(pageValue:number): number {
-    return this.currentPage - pageValue;
-  }
+//   getNextPage(pageValue:number): number {
+//       return this.currentPage + pageValue;
+//   }
+//
+//   getPrevPage(pageValue:number): number {
+//     return this.currentPage - pageValue;
+//   }
 }
 
 

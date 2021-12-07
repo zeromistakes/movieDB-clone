@@ -1,3 +1,4 @@
+<!--{{log('render123')}}-->
 <div class="movie-info">
   <div class="movie-info__bg-wrapper"
        [ngStyle]="{'background-image': 'url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces'+movieInfo.backdrop_path+')'
@@ -32,14 +33,12 @@
               <p class="movie-info__overview">{{movieInfo.overview}}</p>
             </div>
             <ul class="movie-info__people">
-              {{log('render123')}}
-              <li
-                class="movie-info__person"
-              >
-<!--                {{person?.department === 'Sound' ? log(person): null}}-->
-<!--                <div *ngIf="person?.department === 'Sound'">-->
-<!--                  <div  class="movie-info__person-name">{{person?.original_name}}</div>-->
-<!--                  <div  class="movie-info__person-job">{{person?.job}}{{log('render')}}</div>-->
+<!--              <li-->
+<!--                class="movie-info__person"-->
+<!--              >-->
+<!--                <div>-->
+<!--                  <div  class="movie-info__person-name">{{dir.original_name}}</div>-->
+<!--                  <div  class="movie-info__person-job">{{dir.job}}</div>-->
 <!--                </div>-->
 <!--              </li>-->
               <li class="movie-info__person">

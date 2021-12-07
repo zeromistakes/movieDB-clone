@@ -9,19 +9,22 @@ import { SearchService } from '../../search.service';
 export class MovieInfoComponent implements OnInit {
 
   movieInfo:any;
-  constructor(private searchService: SearchService) { }
-
-  ngOnInit(): void {
-    this.getMovieData();
+  constructor(private searchService: SearchService) {
+    console.log('render');
   }
 
-  getMovieData() {
+  ngOnInit(): void {
+    this.subscribeToMovieData();
+  }
+
+  subscribeToMovieData() {
     this.searchService.movieInfo.subscribe(data => {
       console.log(`data`,data)
-      return this.movieInfo = data
+      return this.movieInfo = data;
     }
     );
   }
 
   log(val:any) { console.log(val); }
+
 }
