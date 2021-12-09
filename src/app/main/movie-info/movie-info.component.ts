@@ -7,7 +7,6 @@ import { SearchService } from '../../search.service';
   styleUrls: ['./movie-info.component.scss']
 })
 export class MovieInfoComponent implements OnInit {
-
   movieInfo:any;
   constructor(private searchService: SearchService) {
     console.log('render');
@@ -24,7 +23,5 @@ export class MovieInfoComponent implements OnInit {
     }
     );
   }
-
   log(val:any) { console.log(val); }
-
 }
