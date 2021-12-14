@@ -25,6 +25,7 @@ export class SearchService {
   }
 
   getMovieData(id: number) {
+
     this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=e318a7a565092a3d0c94c77304aec86f&append_to_response=credits`)
       .subscribe((data:any) => {
         this.movieInfo.next(data);

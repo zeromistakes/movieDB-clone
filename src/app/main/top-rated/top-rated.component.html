@@ -1,0 +1,74 @@
+<!--<div class="topRated__wrapper wrapper">-->
+<!--  <div class="topRated__filter-section">-->
+<!--    <form class="filter" (submit)="onSubmit($event)">-->
+<!--      <div class="filter-wrapper">-->
+<!--        <div class='filter-name'>-->
+<!--          <span>Sort</span>-->
+<!--          <span>&#10095;</span>-->
+<!--        </div>-->
+<!--        <div class="filter-inner">-->
+<!--          <div class="filter-inner__wrapper">-->
+<!--            <span>Sort Results By</span>-->
+<!--            <select name="sort">-->
+<!--              <option value="popularity.desc">Popularity Descending</option>-->
+<!--              <option value="popularity.asc">Popularity Ascending</option>-->
+<!--              <option value="vote_average.desc">Rating Descending</option>-->
+<!--              <option value="vote_average.asc">Rating Ascending</option>-->
+<!--              <option value="release_date.desc">Release Date Descending</option>-->
+<!--              <option value="release_date.asc">Release Date Ascending</option>-->
+<!--              <option value="original_title.desc">Title (A-Z)</option>-->
+<!--              <option value="original_title.asc">Title (Z-A)</option>-->
+<!--            </select>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="filter-wrapper">-->
+<!--        <div class='filter-name'>-->
+<!--          <span>Filter</span>-->
+<!--          <span>&#10095;</span>-->
+<!--        </div>-->
+<!--        <div class="filter-inner">-->
+<!--          <div class="filter-inner__wrapper">-->
+<!--            <div class="dateFilter-wrapper">-->
+<!--              <span>Release Dates</span>-->
+<!--              <div class="dateFrom dateFilter"><span>from</span><input type="date" name="dateFrom"></div>-->
+<!--              <div class="dateTo dateFilter"><span>to</span><input type="date" name="dateTo"></div>-->
+<!--            </div>-->
+<!--            <div class="genres-wrapper">-->
+<!--              <span>Genres</span>-->
+<!--              <ul>-->
+<!--                <li><span>Comedy</span></li>-->
+<!--                <li><span>Drama</span></li>-->
+<!--                <li><span>Adventure</span></li>-->
+<!--                <li><span>Action</span></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="userScore-wrapper">-->
+<!--              <span>User Score</span>-->
+<!--              <input class="rangeInput" type="range">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="filter-wrapper">-->
+<!--        <div class='filter-name'>-->
+<!--          <span>Where To Watch</span>-->
+<!--          <span>&#10095;</span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <input type="submit" class="searchButton" value="Search">-->
+<!--    </form>-->
+<!--  </div>-->
+<!--  <div class="topRated__content-section">-->
+
+<!--  </div>-->
+<!--  <div class="result__content-section">-->
+<!--  </div>-->
+<!--</div>-->
+<div class="container">
+  <div class="top-rated__wrapper">
+    <app-top-rated-filters></app-top-rated-filters>
+    <app-top-rated-container></app-top-rated-container>
+  </div>
+</div>
+

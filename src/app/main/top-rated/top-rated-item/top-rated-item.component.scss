@@ -1,0 +1,31 @@
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  width: 182px;
+  height: 393px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.poster {
+  width: 180px;
+  height: 273px;
+}
+.movie-descr {
+  padding: 0 10px ;
+}
+.movie-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+}
+.ids {
+  display: flex;
+  flex-direction: row;
+}
+
+.id {
+  margin-right: 5px;
+}

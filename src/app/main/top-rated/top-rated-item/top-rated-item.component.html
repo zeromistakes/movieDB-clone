@@ -1,0 +1,15 @@
+<div class="movie-card">
+  <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/{{movie.poster_path}}" alt="" class="poster">
+  <div class="movie-score">{{movie.vote_average}}</div>
+  <div class="movie-descr">
+    <div class="movie-title">{{movie.original_title}}</div>
+    <div class="movie-date">{{movie.release_date | date}}</div>
+    <div class="ids">
+      <div class="id"
+        *ngFor="let genreID of movie.genre_ids"
+      > {{genreID}} </div>
+     </div>
+    </div>
+
+
+</div>
