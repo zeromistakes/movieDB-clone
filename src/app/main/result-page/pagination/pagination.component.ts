@@ -8,8 +8,9 @@ import {SearchService} from "../../../search.service";
 })
 export class PaginationComponent implements OnInit {
   @Input() currentPage: number = 1;
-  totalPages: number = 0;
   @Output() changePageEvent = new EventEmitter();
+
+  totalPages: number = 0;
 
   constructor(public searchService: SearchService) { }
 

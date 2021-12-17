@@ -17,7 +17,11 @@ import { PaginationComponent } from './main/result-page/pagination/pagination.co
 import {FormsModule} from "@angular/forms";
 import { MovieInfoComponent } from './main/movie-info/movie-info.component';
 import { TransformTimePipe } from './pipes/transform-time.pipe';
-import {CommonModule, DatePipe} from "@angular/common";
+import {CommonModule} from "@angular/common";
+import { TopRatedComponent } from './main/top-rated/top-rated.component';
+import { TopRatedFiltersComponent } from './main/top-rated/top-rated-filters/top-rated-filters.component';
+import { TopRatedItemComponent } from './main/top-rated/top-rated-item/top-rated-item.component';
+import { TopRatedContainerComponent } from './main/top-rated/top-rated-container/top-rated-container.component';
 
 
 
@@ -35,7 +39,11 @@ import {CommonModule, DatePipe} from "@angular/common";
     ResultItemComponent,
     PaginationComponent,
     MovieInfoComponent,
-    TransformTimePipe
+    TransformTimePipe,
+    TopRatedComponent,
+    TopRatedFiltersComponent,
+    TopRatedItemComponent,
+    TopRatedContainerComponent
   ],
   imports: [
     BrowserModule,

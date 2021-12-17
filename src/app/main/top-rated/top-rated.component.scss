@@ -1,0 +1,80 @@
+.topRated__wrapper{
+  width: 100%;
+  display: flex;
+  padding: 30px;
+}
+
+.topRated__filter-section{
+  width: 25%;
+}
+.topRated__content-section {
+  width: 75%;
+  margin-left: 20px;
+  border: 1px solid grey;
+}
+
+.filter-wrapper{
+  border: 1px solid #dfdfdf;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  // padding: 15px;
+  margin-bottom: 10px;
+
+}
+.filter-name{
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-inner__wrapper{
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #dfdfdf;
+
+  select{
+    background-color: #e4e7eb;
+    padding: 10px;
+    border:none;
+    border-radius: 10px;
+  }
+}
+
+.dateFilter{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.genres-wrapper ul{
+  display: flex;
+  flex-wrap: wrap;
+
+  li{
+    border:1px solid rgb(105, 105, 255);
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    list-style: none;
+  }
+}
+
+.rangeInput{
+  width: 100%;
+}
+
+
+.searchButton{
+  width: 100%;
+  background-color: rgb(42, 141, 255);
+  color: white;
+  border-radius: 10px;
+}
+
+.top-rated__wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
