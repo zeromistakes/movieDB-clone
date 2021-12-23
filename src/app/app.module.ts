@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from "@angular/common/http";
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -50,7 +51,8 @@ import { TopRatedContainerComponent } from './main/top-rated/top-rated-container
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    NgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

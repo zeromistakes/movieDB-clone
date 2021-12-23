@@ -45,7 +45,7 @@
             </div>
             <div class="userScore-wrapper">
               <span>User Score</span>
-              <input class="rangeInput" type="range">
+              <ngx-slider [(value)]="userScoreLower" [(highValue)]="userScoreHigher" [options]="options"></ngx-slider>
             </div>
           </div>
         </div>
