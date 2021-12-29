@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import { FilterService } from "../../../filter.service";
+import { SearchService } from "../../../search.service";
+import {FilteredMoviesResponse} from "../../../../interfaces/filteredMoviesResponse";
+import {FilteredMovieResult} from "../../../../interfaces/filteredMovieResult";
 
 @Component({
   selector: 'app-top-rated-container',
@@ -7,16 +10,23 @@ import { FilterService } from "../../../filter.service";
   styleUrls: ['./top-rated-container.component.scss']
 })
 export class TopRatedContainerComponent implements OnInit {
-  movies:any;
-  constructor(public filterService: FilterService) { }
+
+  filteredMovies: FilteredMovieResult[] = [];
+
+  constructor(
+              private searchService: SearchService,
+              private filterService: FilterService
+              ) { }
 
   ngOnInit(): void {
-    this.subscribeToResultData();
+    this.subscribeToFilteredData();
+    console.log(this.filteredMovies)
   }
 
-  subscribeToResultData() {
-    this.filterService.filteredData.subscribe((data:any) => {
-      this.movies = data;
+  subscribeToFilteredData() {
+    this.searchService.getFilteredData( this.filterService.sortParam, this.filterService.dateFromParam, this.filterService.dateToParam,this.filterService.genresParam.join(),this.filterService.userScoreLower,this.filterService.userScoreHigher).subscribe((data: FilteredMoviesResponse) =>{
+      this.filteredMovies = data.results;
+      console.log('filteredmovies:',this.filteredMovies)
     });
   }
 }

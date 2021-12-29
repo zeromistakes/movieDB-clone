@@ -1,23 +1,50 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
+import {environment} from "../environments/environment";
+import { Genres } from "../interfaces/genres";
+import {Options} from "@angular-slider/ngx-slider";
+import { Genre } from "../interfaces/genre";
+import {SearchService} from "./search.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterService {
-  filteredData = new BehaviorSubject({});
-  constructor(private http: HttpClient) { }
 
-  getFilteredData(sortParam:string, dateFromParam?:string, dateToParam?:string,genresParam?:string, userScoreLower?: number, userScoreHigher?: number ) {
-    this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=e318a7a565092a3d0c94c77304aec86f&sort_by=${sortParam}&primary_release_date.gte=${dateFromParam}&primary_release_date.lte=${dateToParam}&vote_average.gte=${userScoreLower}&vote_average.lte=${userScoreHigher}&with_genres=${genresParam}`)
-      .subscribe((data:any) => {
-        this.filteredData.next(data);
-        console.log(this.filteredData);
-      })
+  userScoreLower: number = 1;
+  userScoreHigher: number = 10;
+  options: Options = {
+    floor: 1,
+    ceil: 10
+  };
+  sortParam: string = 'popularity.asc';
+  dateFromParam: string  = '';
+  dateToParam: string  = '';
+  genres:Genre[] = [];
+  genresParam: string[] = [];
+
+  constructor(private searchService: SearchService
+              ) { }
+  //todo environments +
+  //todo change filter service +-
+  //todo type for filter parameters
+  //todo data types (genres+, searchData, movieInfo, filteredData+ etc.), delete Behaviours
+  //todo router
+  //todo change query string
+  //todo reactive forms
+  //todo interceptors
+  //todo memoization angular
+
+  //todo barrell export / reexport
+  subscribeToGenres() {
+    this.searchService.getGenres().subscribe((data: Genres) =>{
+      this.genres = data.genres;
+      console.log(this.genres)
+    });
   }
 
-  getGenres() {
-   return  this.http.get(`https://api.themoviedb.org/3/genre/movie/list?api_key=e318a7a565092a3d0c94c77304aec86f`);
+  searchBtnHandler() {
+    this.searchService.getFilteredData( this.sortParam, this.dateFromParam, this.dateToParam,this.genresParam.join(),this.userScoreLower,this.userScoreHigher);
   }
 }

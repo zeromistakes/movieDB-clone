@@ -29,8 +29,8 @@ export class ResultContainerComponent implements OnInit {
   }
 
   onMovieClick(id:number) {
-    this.searchService.getMovieData(id);
-    this.router.navigateByUrl('/movie-info');
+    // this.searchService.getMovieData(id);
+    this.router.navigateByUrl(`/movie-info/${id}`);
   }
 
   onPageClick(page:number) {

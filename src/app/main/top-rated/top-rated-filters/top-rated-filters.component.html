@@ -36,7 +36,7 @@
               <span>Genres</span>
               <ul>
                 <li
-                *ngFor="let genre of genresObj.genres"
+                *ngFor="let genre of this.filterService.genres"
                 id="{{genre.id}}"
                 class="genre-item"
                 (click)="onGenreClick($event)"
@@ -45,7 +45,7 @@
             </div>
             <div class="userScore-wrapper">
               <span>User Score</span>
-              <ngx-slider [(value)]="userScoreLower" [(highValue)]="userScoreHigher" [options]="options"></ngx-slider>
+              <ngx-slider [(value)]="this.filterService.userScoreLower" [(highValue)]="this.filterService.userScoreHigher" [options]="this.filterService.options"></ngx-slider>
             </div>
           </div>
         </div>

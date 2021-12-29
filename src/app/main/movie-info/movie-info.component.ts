@@ -15,7 +15,8 @@ export class MovieInfoComponent implements OnInit {
   ngOnInit(): void {
     this.subscribeToMovieData();
   }
-
+//todo sub to actRoute
+  // this.searchService.getMovieData(id);
   subscribeToMovieData() {
     this.searchService.movieInfo.subscribe(data => {
       console.log(`data`,data)
